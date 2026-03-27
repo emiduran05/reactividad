@@ -141,9 +141,7 @@
     }
 }
 
-.chat_box:hover{
-    
-}
+
 
 .user_hora{
     display: flex;
@@ -151,4 +149,91 @@
     span{
         font-size: 12px;
     }
+}
+
+.messages{
+    
+    position: relative;
+}
+
+.messages_container{
+    background-image: url(https://i.pinimg.com/236x/8e/6b/e9/8e6be91a01ba06f18b9eddfb944b2b42.jpg);
+    
+    max-height: 100vh;
+    height: 200vh;
+    overflow-y: scroll;
+    width: 100%;
+    position: relative;
+    background-attachment: fixed ;
+}
+
+
+.messages_header{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    padding: 8px;
+    background-color: #161717;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user_img_name{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    span{
+        font-weight: 600;
+    }
+    
+}
+
+.img_name_container{
+    img{
+        max-width: 50px;
+        border-radius: 50%;
+    }
+}
+
+.actions{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    .llamar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        padding: 10px;
+        border: 1px solid #2E2F2F;
+        border-radius: 20px;
+        min-width: 120px;
+        cursor: pointer;
+    }
+    .llamar:hover{
+        background-color: #2E2F2F;
+
+    }
+    i{
+    cursor: pointer;
+    margin-right: 10px;
+}
+}
+
+
+
+.elipsis{
+    max-width: 30px;
+    filter: invert(100%);
+    cursor: pointer;
+}
+
+.footer{
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #000;
+    padding: 20px;
 }
