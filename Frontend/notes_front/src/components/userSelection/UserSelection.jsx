@@ -15,12 +15,12 @@ export default function Userselection() {
 
                 <div className="user_container">
                     <p>Emiliano Durán <span>A01638902</span></p>
-                    <a href="/user/emi">Ir al perfil</a>
+                    <a href="/whatsapp/emi">Ir al perfil</a>
                 </div>
 
                 <div className="user_container">
                     <p>Wendy del Carmen Martinez <span>A01645818</span></p>
-                    <a href="user/wendy">Ir al perfil</a>
+                    <a href="/whatsapp/wendy">Ir perfil</a>
                 </div>
             </div>
         </div>

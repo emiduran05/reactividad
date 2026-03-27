@@ -8,7 +8,7 @@ export default function App(){
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Userselection />} />
-        <Route path="/whatsapp" element={<Whatsapp />}/>
+        <Route path="/whatsapp/:user" element={<Whatsapp />}/>
       </Routes>
     </BrowserRouter>
   );

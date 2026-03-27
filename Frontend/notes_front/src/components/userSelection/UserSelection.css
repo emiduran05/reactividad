@@ -10,6 +10,7 @@ h1{
     gap: 20px;
     justify-content: center;
     align-items: center;
+    padding: 40px;
     
 }
 
@@ -46,8 +47,4 @@ h1{
         background-color: #178344;
         transition: 0.3s;
     }
-}
-
-body{
-    padding: 40px;
 }
