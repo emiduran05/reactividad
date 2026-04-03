@@ -119,7 +119,7 @@ export default function Whatsapp() {
                                 <div className="user_hora">
                                     {
                                         user == "wendy" ? <p>Emi</p> : <p>Wendy</p>
-                                    }                                    <span>9:20 p.m.</span>
+                                    }                                    <span>{mensajes.at(-1)?.hora}</span>
                                 </div>
 
                                 <div className="message">
