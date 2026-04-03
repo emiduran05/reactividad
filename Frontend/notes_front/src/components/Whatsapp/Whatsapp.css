@@ -117,7 +117,7 @@
     .img_container {
         flex-grow: 1;
         display: flex;
-        justify-content: start;
+        justify-content: center;
 
         img {
             max-width: 50px;
@@ -200,7 +200,7 @@
     top: 0;
     z-index: 400;
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     background-color: #161717;
     display: flex;
     align-items: center;
