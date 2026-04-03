@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./Whatsapp.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 
 export default function Whatsapp() {
@@ -10,7 +10,19 @@ export default function Whatsapp() {
 
     const [message, setMessage] = useState("");
     const [mensajes, setMensajes] = useState([]);
+    const audioRef = useRef(new Audio("/audio2.mp3"));
+    const [audioEnabled, setAudioEnabled] = useState(false);
 
+    useEffect(() => {
+        const unlockAudio = () => {
+            setAudioEnabled(true);
+            document.removeEventListener("click", unlockAudio);
+        };
+
+        document.addEventListener("click", unlockAudio);
+
+        return () => document.removeEventListener("click", unlockAudio);
+    }, []);
     const fetchData = async () => {
         try {
             const res = await fetch("http://localhost:8080/api/mensajes");
@@ -25,6 +37,7 @@ export default function Whatsapp() {
     useEffect(() => {
         fetchData();
     }, []);
+
 
     useEffect(() => {
         const eventSource = new EventSource("http://localhost:8080/mensajes/stream");
@@ -44,7 +57,12 @@ export default function Whatsapp() {
     }, []);
 
 
-
+    useEffect(() => {
+        if (audioEnabled & mensajes.at(-1)?.emisor != user) {
+            audioRef.current.currentTime = 0;
+            audioRef.current.play().catch(() => { });
+        }
+    }, [mensajes]);
 
 
 
@@ -99,9 +117,9 @@ export default function Whatsapp() {
                             <div className="user_info">
 
                                 <div className="user_hora">
- {
-                                    user == "wendy" ? <p>Emi</p> : <p>Wendy</p>
-                                }                                    <span>9:20 p.m.</span>
+                                    {
+                                        user == "wendy" ? <p>Emi</p> : <p>Wendy</p>
+                                    }                                    <span>9:20 p.m.</span>
                                 </div>
 
                                 <div className="message">
