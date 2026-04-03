@@ -6,7 +6,9 @@ export default defineConfig({
   server: {
     watch: {
       usePolling: true,
-      interval: 50
+    },
+    hmr: {
+      overlay: true,
     }
   }
 })
