@@ -31,7 +31,6 @@ public class MensajeService {
 
         Firestore db = FirestoreClient.getFirestore(firebaseApp);
 
-        // colección: mensajes
         ApiFuture<QuerySnapshot> future = db.collection("mensajes").orderBy("timestamp").get();
 
         List<QueryDocumentSnapshot> documents = future.get().getDocuments();
