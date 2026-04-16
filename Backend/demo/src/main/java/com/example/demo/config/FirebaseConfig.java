@@ -17,7 +17,6 @@ public class FirebaseConfig {
     public FirebaseApp firebaseApp() {
         try {
 
-            // Leer desde resources correctamente
             InputStream serviceAccount =
                     new ClassPathResource("firebase-service-account.json").getInputStream();
 
@@ -25,7 +24,6 @@ public class FirebaseConfig {
                     .setCredentials(GoogleCredentials.fromStream(serviceAccount))
                     .build();
 
-            // 🔥 evitar duplicados
             if (FirebaseApp.getApps().isEmpty()) {
                 return FirebaseApp.initializeApp(options);
             } else {
