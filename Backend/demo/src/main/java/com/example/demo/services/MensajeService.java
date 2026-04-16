@@ -70,7 +70,6 @@ public void escucharMensajes() {
         if (snap != null) {
             for (DocumentChange change : snap.getDocumentChanges()) {
 
-                // 🔥 SOLO nuevos mensajes
                 if (change.getType() == DocumentChange.Type.ADDED) {
 
                     mensaje nuevo = change.getDocument().toObject(mensaje.class);
